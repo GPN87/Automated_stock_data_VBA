@@ -9,7 +9,7 @@ Dim i, j, x As Integer
 
 Dim percentchange, yearlychange As Double
 Dim openprice, closeprice As Double
-Dim volume, greatest_volume As LongLong
+Dim volume, greatest_volume As Double
 
 Dim lastrow, tickerrow, yearchangerow, percentchangerow, volumechangerow As Integer
 
@@ -53,7 +53,7 @@ volumechangerow = Range("L2").End(xlDown).Count
             closeprice = ws.Cells(i, 6).Value
                                   
             'this calculates the yearly change and prints it to column J.
-            yearlychange = openprice - closeprice
+            yearlychange = closeprice - openprice
                     
                     '..and applies conditional formatting to the yearly change column
                     If yearlychange > 0 Then
